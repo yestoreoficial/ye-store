@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b15" />
+  <meta name="description" content="Catálogo online de Y&E Store. Todo lo que buscas, en un solo lugar." />
+  <title>Y&E Store | Catálogo online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="promo-bar">⚡ Despachos rápidos · Compra segura · Atención por WhatsApp</div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <img src="logo.png" alt="Logo Y&E Store" />
+      <div>
+        <strong>Y&E Store</strong>
+        <span>Todo lo que buscas, en un solo lugar.</span>
+      </div>
+    </a>
+    <button id="cartButton" class="cart-button" aria-label="Abrir carrito">
+      <span>🛒</span>
+      <span>Mi pedido</span>
+      <b id="cartCount">0</b>
+    </button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <span class="eyebrow">NUEVO CATÁLOGO ONLINE</span>
+          <h1>Encuentra eso que estabas buscando.</h1>
+          <p>Productos para el hogar, tecnología, moda, deporte, mascotas y mucho más.</p>
+          <a href="#catalogo" class="primary-btn">Ver productos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="store-info">
+      <div><span class="info-icon">🟢</span><p><b>Atendiendo ahora</b><small>Lunes a sábado · 09:00 a 20:00</small></p></div>
+      <div><span class="info-icon">📍</span><p><b>Rancagua y alrededores</b><small>Consulta despacho a tu comuna</small></p></div>
+      <div><span class="info-icon">💬</span><p><b>Compra por WhatsApp</b><small>Confirma stock antes de pagar</small></p></div>
+    </section>
+
+    <section id="catalogo" class="catalog-section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">CATÁLOGO</span>
+          <h2>Explora nuestros productos</h2>
+        </div>
+        <select id="sortSelect" aria-label="Ordenar productos">
+          <option value="featured">Más destacados</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+          <option value="name">Nombre A-Z</option>
+        </select>
+      </div>
+
+      <div class="search-wrap">
+        <span>🔎</span>
+        <input id="searchInput" type="search" placeholder="Buscar productos..." autocomplete="off" />
+        <button id="clearSearch" aria-label="Limpiar búsqueda">✕</button>
+      </div>
+
+      <div id="categories" class="categories" aria-label="Categorías"></div>
+      <p id="resultsText" class="results-text"></p>
+      <div id="productGrid" class="product-grid"></div>
+      <div id="emptyState" class="empty-state" hidden>
+        <div>🔍</div><h3>No encontramos productos</h3><p>Prueba con otra palabra o categoría.</p>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div><span class="eyebrow">TU COMPRA</span><h2>Mi pedido</h2></div>
+      <button id="closeCart" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div id="cartEmpty" class="cart-empty"><div>🛒</div><p>Tu carrito está vacío.</p><small>Agrega productos para comenzar.</small></div>
+    <div class="cart-summary">
+      <div><span>Subtotal</span><b id="cartSubtotal">$0</b></div>
+      <small>El costo de despacho se confirma por WhatsApp.</small>
+      <button id="whatsappOrder" class="whatsapp-btn">💬 Enviar pedido por WhatsApp</button>
+    </div>
+  </aside>
+  <div id="backdrop" class="backdrop"></div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" aria-label="Contactar por WhatsApp">💬</a>
+
+  <footer>
+    <img src="logo.png" alt="Y&E Store" />
+    <div><b>Y&E Store</b><p>Todo lo que buscas, en un solo lugar.</p></div>
+    <small>© 2026 Y&E Store. Catálogo demostrativo.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
